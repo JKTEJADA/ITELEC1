@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    //Current Time
+    TimeSpan Noon = new TimeSpan(12, 00, 00);
+    TimeSpan Evening = new TimeSpan(18, 00, 00);
+    TimeSpan CDT = DateTime.Now.TimeOfDay;
+    String curTimeDesc = "";
+
+   
+    //Current Date
+   
+
+
+
+    
+
+    @if (CDT <= Noon)
+    {
+        curTimeDesc = "Morning";
+        
+
+    }
+    else if (CDT < Evening && CDT > Noon) {
+
+        curTimeDesc = "Afternoon";
+    }
+    else
+    {
+        curTimeDesc = "test";
+        
+
+    }
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h3> It is currently <strong>@curTimeDesc</strong> on <strong>@DateTime.Now.DayOfWeek</strong> , <strong>@DateTime.Now.Day</strong> <strong> @DateTime.Now.ToString("MMMM")</strong>.</h3>
+</div>
